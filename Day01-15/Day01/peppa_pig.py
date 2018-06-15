@@ -2,17 +2,17 @@ from turtle import*
 
 
 def nose(x,y):#鼻子
-    penup()#提起笔
+    penup()#提起筆
     goto(x,y)#定位
-    pendown()#落笔，开始画
-    setheading(-30)#将乌龟的方向设置为to_angle/为数字（0-东、90-北、180-西、270-南）
-    begin_fill()#准备开始填充图形
+    pendown()#落筆，開始畫
+    setheading(-30)#將烏龜的方向設置爲to_angle/爲數字（0-東、90-北、180-西、270-南）
+    begin_fill()#準備開始填充圖形
     a=0.4
     for i in range(120):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            left(3) #向左转3度
-            forward(a) #向前走a的步长
+            left(3) #向左轉3度
+            forward(a) #向前走a的步長
         else:
             a=a-0.08
             left(3)
@@ -25,11 +25,11 @@ def nose(x,y):#鼻子
     setheading(0)
     forward(10)
     pendown()
-    pencolor(255,155,192)#画笔颜色
+    pencolor(255,155,192)#畫筆顔色
     setheading(10)
     begin_fill()
     circle(5)
-    color(160,82,45)#返回或设置pencolor和fillcolor
+    color(160,82,45)#返回或設置pencolor和fillcolor
     end_fill()
 
     penup()
@@ -44,7 +44,7 @@ def nose(x,y):#鼻子
     end_fill()
 
 
-def head(x,y):#头
+def head(x,y):#頭
     color((255,155,192),"pink")
     penup()
     goto(x,y)
@@ -67,8 +67,8 @@ def head(x,y):#头
     for i in range(60):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            lt(3) #向左转3度
-            fd(a) #向前走a的步长
+            lt(3) #向左轉3度
+            fd(a) #向前走a的步長
         else:
             a=a-0.08
             lt(3)
@@ -169,19 +169,19 @@ def mouth(x,y): #嘴
     circle(40,80)
 
 
-def setting():          #参数设置
+def setting():          #參數設置
     pensize(4)
-    hideturtle()        #使乌龟无形（隐藏）
-    colormode(255)      #将其设置为1.0或255.随后 颜色三元组的r，g，b值必须在0 .. cmode范围内
+    hideturtle()        #使烏龜無形（隱藏）
+    colormode(255)      #將其設置爲1.0或255.隨後 顔色三元組的r，g，b值必須在0 .. cmode範圍內
     color((255,155,192),"pink")
     setup(840,500)
     speed(10)
 
 
 def main():
-    setting()           #画布、画笔设置
+    setting()           #畫布、畫筆設置
     nose(-100,100)      #鼻子
-    head(-69,167)       #头
+    head(-69,167)       #頭
     ears(0,160)         #耳朵
     eyes(0,140)         #眼睛
     cheek(80,10)        #腮

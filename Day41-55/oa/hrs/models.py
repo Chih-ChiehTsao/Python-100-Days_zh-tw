@@ -1,17 +1,17 @@
 from django.db import models
 
-# ORM - 对象关系映射
-# 对象模型  <--->   关系模型
-# 实体类    <--->   二维表
-# 属性      <--->   列
-# 对象      <--->   记录
+# ORM - 對象關係映射
+# 對象模型  <--->   關係模型
+# 實體類    <--->   二維表
+# 屬性      <--->   列
+# 對象      <--->   記錄
 
 
 class Dept(models.Model):
-    no = models.IntegerField(primary_key=True, verbose_name='部门编号')
-    name = models.CharField(max_length=20, verbose_name='部门名称')
-    location = models.CharField(max_length=10, verbose_name='部门所在地')
-    excellent = models.BooleanField(default=0, verbose_name='是否优秀')
+    no = models.IntegerField(primary_key=True, verbose_name='部門編號')
+    name = models.CharField(max_length=20, verbose_name='部門名稱')
+    location = models.CharField(max_length=10, verbose_name='部門所在地')
+    excellent = models.BooleanField(default=0, verbose_name='是否優秀')
 
     def __str__(self):
         return self.name

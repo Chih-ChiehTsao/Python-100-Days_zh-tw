@@ -7,9 +7,9 @@ from django.shortcuts import render, redirect
 
 from search.models import CarRecord
 
-# 序列化/串行化/腌咸菜 - 把对象按照某种方式处理成字节或者字符的序列
-# 反序列化/反串行化 - 把字符或者字节的序列重新还原成对象
-# Python实现序列化和反序列化的工具模块 - json / pickle / shelve
+# 序列化/串行化/腌鹹菜 - 把對象按照某種方式處理成字節或者字符的序列
+# 反序列化/反串行化 - 把字符或者字節的序列重新還原成對象
+# Python實現序列化和反序列化的工具模塊 - json / pickle / shelve
 # return HttpResponse(json.dumps(obj), content_type='application/json')
 # return JsonResponse(obj, encoder=, safe=False)
 # from django.core.serializers import serialize
@@ -27,42 +27,42 @@ class CarRecordEncoder(JSONEncoder):
 
 def ajax_search(request):
     current_time = datetime.now().ctime()
-    # Cookie是保存在浏览器临时文件中的用户数据(通常是识别用户身份的ID/token或者是用户的偏好设置)
-    # 因为每次请求服务器时在HTTP请求的请求头中都会携带本网站的Cookie数据
-    # 那么服务器就可以获取这些信息来识别用户身份或者了解用户的偏好 这就是所谓的用户跟踪
-    # 因为HTTP本身是无状态的 所以需要使用Cookie/隐藏域/URL重写这样的技术来实现用户跟踪
-    # 从请求中读取指定的cookie - 通过cookie的名字找到对应的值
-    # 如果请求中没有指定名字的cookie可以通过get方法的第二个参数设置一个默认的返回值
+    # Cookie是保存在浏覽器臨時文件中的用戶數據(通常是識別用戶身份的ID/token或者是用戶的偏好設置)
+    # 因爲每次請求服務器時在HTTP請求的請求頭中都會攜帶本網站的Cookie數據
+    # 那麽服務器就可以獲取這些信息來識別用戶身份或者了解用戶的偏好 這就是所謂的用戶跟蹤
+    # 因爲HTTP本身是無狀態的 所以需要使用Cookie/隱藏域/URL重寫這樣的技術來實現用戶跟蹤
+    # 從請求中讀取指定的cookie - 通過cookie的名字找到對應的值
+    # 如果請求中沒有指定名字的cookie可以通過get方法的第二個參數設置一個默認的返回值
     last_visit_time = request.COOKIES.get('last_visit_time')
     if request.method == 'GET':
         response = render(request, 'search2.html',
                           {'last': last_visit_time if last_visit_time
-                           else '你是第一次访问我们的网站'})
-        # 通过render渲染页面后先用set_cookie方法设置cookie后再返回HttpResponse对象
-        # 第一个参数是cookie的名字 第二个参数是cookie的值 第三个参数是过期时间(秒)
+                           else '你是第一次訪問我們的網站'})
+        # 通過render渲染頁面後先用set_cookie方法設置cookie後再返回HttpResponse對象
+        # 第一個參數是cookie的名字 第二個參數是cookie的值 第三個參數是過期時間(秒)
         response.set_cookie('last_visit_time', current_time, max_age=MAX_AGE)
         return response
     else:
         carno = request.POST['carno']
         record_list = list(CarRecord.objects.filter(carno__icontains=carno))
-        # 第一个参数是要转换成JSON格式(序列化)的对象
-        # encoder参数要指定完成自定义对象序列化的编码器(JSONEncoder的子类型)
-        # safe参数的值如果为True那么传入的第一个参数只能是字典
+        # 第一個參數是要轉換成JSON格式(序列化)的對象
+        # encoder參數要指定完成自定義對象序列化的編碼器(JSONEncoder的子類型)
+        # safe參數的值如果爲True那麽傳入的第一個參數只能是字典
         # return HttpResponse(json.dumps(record_list), content_type='application/json; charset=utf-8')
         return JsonResponse(record_list, encoder=CarRecordEncoder,
                             safe=False)
 
 
 def search(request):
-    # 请求行中的请求命令
+    # 請求行中的請求命令
     # print(request.method)
-    # 请求行中的路径
+    # 請求行中的路徑
     # print(request.path)
-    # 请求头(以HTTP_打头的键是HTTP请求的请求头)
+    # 請求頭(以HTTP_打頭的鍵是HTTP請求的請求頭)
     # print(request.META)
-    # 查询参数: http://host/path/resource?a=b&c=d
+    # 查詢參數: http://host/path/resource?a=b&c=d
     # print(request.GET)
-    # 表单参数
+    # 表單參數
     # print(request.POST)
     if request.method == 'GET':
         ctx = {'show_result': False}
@@ -75,12 +75,12 @@ def search(request):
 
 
 class CarRecordForm(forms.ModelForm):
-    carno = forms.CharField(min_length=7, max_length=7, label='车牌号', error_messages={'carno': '请输入有效的车牌号'})
-    reason = forms.CharField(max_length=50, label='违章原因')
-    punish = forms.CharField(max_length=50, required=False, label='处罚方式')
+    carno = forms.CharField(min_length=7, max_length=7, label='車牌號', error_messages={'carno': '請輸入有效的車牌號'})
+    reason = forms.CharField(max_length=50, label='違章原因')
+    punish = forms.CharField(max_length=50, required=False, label='處罰方式')
 
     """
-    # 执行额外的表单数据验证
+    # 執行額外的表單數據驗證
     def clean_carno(self):
         _carno = self.cleaned_data['carno']
         if not condition:

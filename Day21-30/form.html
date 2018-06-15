@@ -47,43 +47,43 @@
 	<body>
 		<form id="login" action="" method="post">
 			<div class="formitem">
-				<label for="username">用户名: </label>
+				<label for="username">用戶名: </label>
 				<input type="text" id="username" name="username">
 				<span id="uidHint" class="hint"></span>
 			</div>
 			<div class="formitem">
-				<label for="password">密码: </label>
+				<label for="password">密碼: </label>
 				<input type="password" id="password" name="password">
 				<span id="pwdHint" class="hint"></span>
 			</div>
 			<div class="formitem">
-				<label for="repassword">确认密码: </label>
+				<label for="repassword">確認密碼: </label>
 				<input type="password" id="repassword">
 				<span id="rePwdHint" class="hint"></span>
 			</div>
 			<div class="formitem">
-				<label for="tel">手机号: </label>
+				<label for="tel">手機號: </label>
 				<input type="text" id="tel" name="tel">
 				<span id="telHint" class="hint"></span>
 			</div>
 			<div class="formitem">
-				<label for="code">验证码: </label>
+				<label for="code">驗證碼: </label>
 				<input type="text" id="code" name="code" size="4">
-				<input type="button" value="获取验证码">
+				<input type="button" value="獲取驗證碼">
 			</div>
 			<div class="formitem">
-				<input type="submit" value="立即开通">
+				<input type="submit" value="立即開通">
 			</div>
 			<div class="formitem">
 				<label for="agreement"></label>
 				<input type="checkbox" id="agreement">
-				<span class="hint">我同意<a href="#">《XYZ服务协议》</a></span>
+				<span class="hint">我同意<a href="#">《XYZ服務協議》</a></span>
 			</div>
 		</form>
 		<script src="js/mylib.js" ></script>
 		<script>	
 			(function() {
-				// 使用正则表达式的字面量语法创建正则表达式对象
+				// 使用正則表達式的字面量語法創建正則表達式對象
 				var uidRegEx = /^\w{6,20}$/;
 				var pwdRegEx = /^.{8,20}$/;
 				var telRegEx = /^1[345789]\d{9}$/;
@@ -96,7 +96,7 @@
 						uidHint.className = 'hint correct';
 						return true;
 					} else {
-						uidHint.textContent = '用户名由字母数字下划线构成且长度为6-20个字符';
+						uidHint.textContent = '用戶名由字母數字下劃線構成且長度爲6-20個字符';
 						uidHint.className = 'hint incorrect';
 						return false;
 					}
@@ -111,7 +111,7 @@
 						pwdHint.className = 'hint correct';
 						return true;
 					} else {
-						pwdHint.textContent = '密码长度为8-20个字符';
+						pwdHint.textContent = '密碼長度爲8-20個字符';
 						pwdHint.className = 'hint incorrect';
 						return false;
 					}
@@ -123,7 +123,7 @@
 					var password = pwd.value;
 					var repassword = rePwd.value;
 					if (repassword.length == 0) {
-						rePwdHint.textContent = '确认密码不能为空';
+						rePwdHint.textContent = '確認密碼不能爲空';
 						rePwdHint.className = 'hint incorrect';
 						return false;
 					}
@@ -132,7 +132,7 @@
 						rePwdHint.className = 'hint correct';
 						return true;
 					} else {
-						rePwdHint.textContent = '密码和确认密码不一致';
+						rePwdHint.textContent = '密碼和確認密碼不一致';
 						rePwdHint.className = 'hint incorrect';
 						return false;
 					}
@@ -147,27 +147,27 @@
 						telHint.className = 'hint correct';
 						return true;
 					} else {
-						telHint.textContent = '请输入有效的手机号';
+						telHint.textContent = '請輸入有效的手機號';
 						telHint.className = 'hint incorrect';
 						return false;
 					}
 				}
 				handleEvent(telInput, 'blur', checkTel);
 				var form = $('login') || document.forms[0];
-				// 给表单对象绑定表单提交事件
+				// 給表單對象綁定表單提交事件
 				handleEvent(form, 'submit', function(evt) {
 					evt = evt || window.event;
-					// 阻止表单提交等到验证通过了之后手动提交表单
+					// 阻止表單提交等到驗證通過了之後手動提交表單
 					evt.preventDefault();
 					if (!$('agreement').checked) {
-						alert('请先选中同意《XYZ服务协议》');
+						alert('請先選中同意《XYZ服務協議》');
 						return ;
 					}
-					// 请注意&&和&之间区别 前者有短路效果后者没有
+					// 請注意&&和&之間區別 前者有短路效果後者沒有
 					if (checkUsername() & checkPassword() &
 						checkRepassword() & checkTel()) {
 						var target = evt.target || evt.srcElement;
-						// 如果所有表单数据验证都通过了就提交表单
+						// 如果所有表單數據驗證都通過了就提交表單
 						target.submit();
 					}
 				});

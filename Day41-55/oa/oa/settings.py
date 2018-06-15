@@ -127,7 +127,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATIC_URL = '/static/'
 
-# 配置将日志输出到控制台 日志级别为DEBUG(最详细的日志)
+# 配置將日志輸出到控制台 日志級別爲DEBUG(最詳細的日志)
 # DEBUG < INFO < WARNING < ERROR < CRITICAL
 LOGGING = {
     'version': 1,

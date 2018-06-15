@@ -104,12 +104,12 @@
 			<div id="cart-header">
 				<div class="left w110 ml10">
 					<input id="selectAll" type="checkbox">
-					<label for="selectAll">全选</label>
+					<label for="selectAll">全選</label>
 				</div>
 				<div class="left w250">商品</div>
-				<div class="left w120 center">单价</div>
-				<div class="left w120 center">数量</div>
-				<div class="left w120 center">小计</div>
+				<div class="left w120 center">單價</div>
+				<div class="left w120 center">數量</div>
+				<div class="left w120 center">小計</div>
 				<div class="left w120 center">操作</div>
 			</div>
 			<div id="cart-items">
@@ -124,7 +124,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						海澜之家/Heilan Home春装商务白衬衫男修身HNCAD3A067Y 漂白(69) 漂
+						海瀾之家/Heilan Home春裝商務白襯衫男修身HNCAD3A067Y 漂白(69) 漂
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">138.00</span></div>
@@ -135,7 +135,7 @@
 					</div>
 					<div class="left w120 center">&yen;<span>138.00</span></div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 				<div class="clear single-item">
@@ -149,7 +149,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						HLA海澜之家长袖衬衫男牛津纺休闲干净透气HNEAJ1E048A浅灰
+						HLA海瀾之家長袖襯衫男牛津紡休閑幹淨透氣HNEAJ1E048A淺灰
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">128.00</span></div>
@@ -160,7 +160,7 @@
 					</div>
 					<div class="left w120 center">&yen;<span>128.00</span></div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 				<div class="clear single-item">
@@ -174,7 +174,7 @@
 					</div>
 					<div class="left w250">
 						<span>
-						HLA海澜之家牛津纺清新休闲衬衫2018春季新品质感柔软长袖衬衫男
+						HLA海瀾之家牛津紡清新休閑襯衫2018春季新品質感柔軟長袖襯衫男
 						</span>
 					</div>
 					<div class="left w120 center">&yen;<span class="price">99.00</span></div>
@@ -185,34 +185,34 @@
 					</div>
 					<div class="left w120 center">&yen;99.00</div>
 					<div class="left w120 center">
-						<a href="javascript:void(0);">删除</a>
+						<a href="javascript:void(0);">刪除</a>
 					</div>
 				</div>
 			</div>
 			<div id="cart-footer">
 				<div class="clear left">
-					<a id="clearSelected" href="javascript:void(0);">删除选中商品</a>
+					<a id="clearSelected" href="javascript:void(0);">刪除選中商品</a>
 				</div>
 				<div class="right">
-					<span>总共选中了<span id="totalCount">0</span>件商品</span>
-					<span>总计: <span id="totalPrice">&yen;0.00</span></span>
-					<button id="pay" class="big-button">去结算</button>
+					<span>總共選中了<span id="totalCount">0</span>件商品</span>
+					<span>總計: <span id="totalPrice">&yen;0.00</span></span>
+					<button id="pay" class="big-button">去結算</button>
 				</div>
 			</div>
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script>
-			// jQuery中的$函数(jQuery)的作用
-			// 1. 如果$函数的参数是一个函数那么该函数绑定文档加载完成后要执行的回调函数
-			// 2. 如果$函数的参数是一个选择器字符串那么$函数会返回对应的元素(jQuery对象)
-			// 3. 如果$函数的参数是一个标签字符串那么$函数会创建该元素并返回(jQuery对象)
-			// 4. 如果$函数的参数是一个原生的JS元素对象那么$函数会将它转变成jQuery对象
+			// jQuery中的$函數(jQuery)的作用
+			// 1. 如果$函數的參數是一個函數那麽該函數綁定文檔加載完成後要執行的回調函數
+			// 2. 如果$函數的參數是一個選擇器字符串那麽$函數會返回對應的元素(jQuery對象)
+			// 3. 如果$函數的參數是一個標簽字符串那麽$函數會創建該元素並返回(jQuery對象)
+			// 4. 如果$函數的參數是一個原生的JS元素對象那麽$函數會將它轉變成jQuery對象
 			$(function() {
-				// this到底是什么要看具体的上下文环境
-				// 简单的说函数中的this指的是谁调用了这个函数或者谁引发了这个函数的执行
+				// this到底是什麽要看具體的上下文環境
+				// 簡單的說函數中的this指的是誰調用了這個函數或者誰引發了這個函數的執行
 				$('#selectAll').on('change', function(evt) {
-					// 获取事件源的两种方式: evt.target或者this
-					// 这里拿到的是原生的JavaScript对象
+					// 獲取事件源的兩種方式: evt.target或者this
+					// 這裏拿到的是原生的JavaScript對象
 					if ($(this).prop('checked')) {
 						$('.single-item input[type="checkbox"]').prop('checked', true);
 						calcTotal();
@@ -223,7 +223,7 @@
 					}
 				});
 				
-				// 为单个商品项的复选框绑定改变事件
+				// 爲單個商品項的複選框綁定改變事件
 				$('input[name="selectOne"]').on('change', function() {
 					if (!$(this).prop('checked')) {
 						$('#selectAll').prop('checked', false);
@@ -231,9 +231,9 @@
 					calcTotal();
 				});
 				
-				// 为删除选中商品超链接绑定事件回调
+				// 爲刪除選中商品超鏈接綁定事件回調
 				$('#clearSelected').on('click', function() {
-					if (confirm('确定要删除所选商品吗?')) {
+					if (confirm('確定要刪除所選商品嗎?')) {
 						$('.single-item').each(function() {
 							if ($(this).find('input[name="selectOne"]').prop('checked')) {
 								$(this).remove();
@@ -243,7 +243,7 @@
 					}
 				});
 				
-				// 为减少和添加商品数量的按钮绑定事件回调
+				// 爲減少和添加商品數量的按鈕綁定事件回調
 				$('.single-item button').on('click', function(evt) {
 					$(this).parent().parent().find('input[name="selectOne"]').prop('checked', true);
 					if ($(this).text() == '-') {
@@ -252,7 +252,7 @@
 							count -= 1;
 							$(this).next().val(count);
 						} else {
-							alert('商品数量最少为1');
+							alert('商品數量最少爲1');
 						}
 					} else {
 						var count = parseInt($(this).prev().val());
@@ -260,7 +260,7 @@
 							count += 1;
 							$(this).prev().val(count);
 						} else {
-							alert('商品数量最多为200');
+							alert('商品數量最多爲200');
 						}
 					}
 					var price = parseFloat($(this).parent().prev().find('span').text());
@@ -268,15 +268,15 @@
 					calcTotal();
 				});
 				
-				// 为单个商品项删除超链接绑定事件回调
+				// 爲單個商品項刪除超鏈接綁定事件回調
 				$('.single-item a').on('click', function() {
-					if (window.confirm('确定要删除该项吗?')) {
+					if (window.confirm('確定要刪除該項嗎?')) {
 						$(this).parent().parent().remove();
 						calcTotal();
 					}
 				});
 				
-				// 为商品数量文本框绑定改变事件回调
+				// 爲商品數量文本框綁定改變事件回調
 				$('.single-item input[type="text"]').on('change', function() {
 					$(this).parent().parent().find('input[name="selectOne"]').prop('checked', true);
 					var count = parseInt($(this).val());
@@ -284,7 +284,7 @@
 					// "12abc" == 12
 					// "xyz" == NaN
 					if (count != $(this).val() || count < 1 || count > 200) {
-						alert('无效的商品数量值');
+						alert('無效的商品數量值');
 						count = 1;
 						$(this).val(count);
 					}
@@ -293,7 +293,7 @@
 					calcTotal();
 				});
 				
-				// 计算总计
+				// 計算總計
 				function calcTotal() {
 					var checkBoxes = $('input[name="selectOne"]');
 					var priceSpans = $('.single-item .price');
@@ -301,9 +301,9 @@
 					var totalCount = 0;
 					var totalPrice = 0;
 					for (var i = 0; i < priceSpans.length; i += 1) {
-						// 复选框被勾中的购物车项才进行计算
+						// 複選框被勾中的購物車項才進行計算
 						if ($(checkBoxes[i]).prop('checked')) {
-							// 强调: jQuery对象使用下标运算或get方法会还原成原生的JavaScript对象
+							// 強調: jQuery對象使用下標運算或get方法會還原成原生的JavaScript對象
 							var price = parseFloat($(priceSpans[i]).text());
 							var count = parseInt($(countInputs[i]).val());
 							totalCount += count;

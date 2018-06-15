@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>车辆违章查询</title>
+    <title>車輛違章查詢</title>
     <style>
         * {
             font: 18px/30px Arial;
@@ -49,23 +49,23 @@
 <body>
     <div id="container">
         <form id="search" action="/search" method="post">
-            <!-- 跨站身份伪造: 利用浏览器存储的cookie中的用户身份标识冒充用户执行操作 -->
-            <!-- 防范跨站身份伪造最佳的做法就是在表单中放置随机令牌 -->
-            <!-- 除此之外通过设置令牌还可以防范表单重复提交以及重放攻击 -->
-            <!-- 隐藏域 / 隐式表单域: 页面上是无法看到该内容-->
+            <!-- 跨站身份僞造: 利用浏覽器存儲的cookie中的用戶身份標識冒充用戶執行操作 -->
+            <!-- 防範跨站身份僞造最佳的做法就是在表單中放置隨機令牌 -->
+            <!-- 除此之外通過設置令牌還可以防範表單重複提交以及重放攻擊 -->
+            <!-- 隱藏域 / 隱式表單域: 頁面上是無法看到該內容-->
             {% csrf_token %}
-            <input type="search" id="carno" name="carno" placeholder="请输入你的车牌号" required>
+            <input type="search" id="carno" name="carno" placeholder="請輸入你的車牌號" required>
             <input type="submit" value="搜索">
-            <a href="/add">添加新记录</a>
+            <a href="/add">添加新記錄</a>
         </form>
         <hr>
         <table id="result">
             <thead>
                 <tr>
-                    <th>车牌号</th>
-                    <th>违章原因</th>
-                    <th>违章时间</th>
-                    <th>处罚方式</th>
+                    <th>車牌號</th>
+                    <th>違章原因</th>
+                    <th>違章時間</th>
+                    <th>處罰方式</th>
                     <th>是否受理</th>
                 </tr>
             </thead>

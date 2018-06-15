@@ -22,7 +22,7 @@ def del_dept(request, no='0'):
         ctx = {'code': 404}
     return HttpResponse(
         dumps(ctx), content_type='application/json; charset=utf-8')
-    # 重定向 - 给浏览器一个URL, 让浏览器重新请求指定的页面
+    # 重定向 - 給浏覽器一個URL, 讓浏覽器重新請求指定的頁面
     # return redirect(reverse('depts'))
     # return depts(request)
 
@@ -34,8 +34,8 @@ def emps(request, no='0'):
     # dept.emps.all()
     # emps_list = dept.emp_set.all()
     # all() / filter() ==> QuerySet
-    # QuerySet使用了惰性查询 - 如果不是非得取到数据那么不会发出SQL语句
-    # 这样做是为了节省服务器内存的开销 - 延迟加载 - 节省空间势必浪费时间
+    # QuerySet使用了惰性查詢 - 如果不是非得取到數據那麽不會發出SQL語句
+    # 這樣做是爲了節省服務器內存的開銷 - 延遲加載 - 節省空間勢必浪費時間
     emps_list = list(Emp.objects.filter(dept__no=no).select_related('dept'))
     ctx = {'emp_list': emps_list, 'dept_name': emps_list[0].dept.name} \
         if len(emps_list) > 0 else {}

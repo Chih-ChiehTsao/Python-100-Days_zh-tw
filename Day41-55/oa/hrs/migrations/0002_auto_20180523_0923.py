@@ -13,22 +13,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='dept',
             name='excellent',
-            field=models.BooleanField(default=0, verbose_name='是否优秀'),
+            field=models.BooleanField(default=0, verbose_name='是否優秀'),
         ),
         migrations.AlterField(
             model_name='dept',
             name='location',
-            field=models.CharField(max_length=10, verbose_name='部门所在地'),
+            field=models.CharField(max_length=10, verbose_name='部門所在地'),
         ),
         migrations.AlterField(
             model_name='dept',
             name='name',
-            field=models.CharField(max_length=20, verbose_name='部门名称'),
+            field=models.CharField(max_length=20, verbose_name='部門名稱'),
         ),
         migrations.AlterField(
             model_name='dept',
             name='no',
-            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='部门编号'),
+            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='部門編號'),
         ),
         migrations.AlterField(
             model_name='emp',

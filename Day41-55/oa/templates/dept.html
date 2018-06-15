@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>部门</title>
+    <title>部門</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <style>
         #dept td, #dept th {
@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row clearfix">
 		<div class="col-md-12 column">
-			<h3>部门信息</h3>
+			<h3>部門信息</h3>
             <hr>
 		</div>
 	</div>
@@ -25,10 +25,10 @@
             <table id="dept" class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>部门编号</th>
-                    <th>部门名称</th>
-                    <th>部门所在地</th>
-                    <th>是否优秀</th>
+                    <th>部門編號</th>
+                    <th>部門名稱</th>
+                    <th>部門所在地</th>
+                    <th>是否優秀</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -37,7 +37,7 @@
                     <tr>
                         <td>{{ dept.no }}</td>
                         <td>
-                            <!-- 写代码时要尽量避免使用硬编码(hard code) -->
+                            <!-- 寫代碼時要盡量避免使用硬編碼(hard code) -->
                             <a href="{% url 'empsindept' dept.no %}">{{ dept.name }}</a>
                         </td>
                         <td>{{ dept.location }}</td>
@@ -49,7 +49,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            <a id="{{ dept.no }}" href="javascript:void(0);" class="btn btn-xs btn-warning">删除</a>
+                            <a id="{{ dept.no }}" href="javascript:void(0);" class="btn btn-xs btn-warning">刪除</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -68,7 +68,7 @@
         $('#dept tbody tr:odd').addClass('warning');
         $('#dept a[id]').on('click', function(evt) {
             var a = $(evt.target);
-            if (confirm('确定要删除吗?')) {
+            if (confirm('確定要刪除嗎?')) {
                 $.getJSON('/hrs/deldept/' + a.attr('id'), function(json) {
                     if (json.code == 200) {
                         a.parent().parent().remove();

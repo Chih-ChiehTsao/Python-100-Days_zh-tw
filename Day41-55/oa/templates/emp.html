@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>员工</title>
+    <title>員工</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="row clearfix">
 		<div class="col-md-12 column">
-			<h3>{{ dept_name }}员工信息</h3>
+			<h3>{{ dept_name }}員工信息</h3>
             <hr>
 		</div>
 	</div>
@@ -20,11 +20,11 @@
             <table id="dept" class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>编号</th>
+                    <th>編號</th>
                     <th>姓名</th>
-                    <th>职位</th>
+                    <th>職位</th>
                     <th>月薪</th>
-                    <th>部门名称</th>
+                    <th>部門名稱</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,13 +40,13 @@
                 </tbody>
             </table>
             {% else %}
-                <h2>此部门暂时没有员工!</h2>
+                <h2>此部門暫時沒有員工!</h2>
             {% endif %}
         </div>
         <div class="col-md-4 column">
         </div>
     </div>
-    <a href="{% url 'depts' %}">返回部门列表</a>
+    <a href="{% url 'depts' %}">返回部門列表</a>
 </div>
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>

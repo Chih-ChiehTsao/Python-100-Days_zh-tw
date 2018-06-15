@@ -1,9 +1,9 @@
 """
 
-使用socketserver模块创建时间服务器
+使用socketserver模塊創建時間服務器
 
 Version: 0.1
-Author: 骆昊
+Author: 駱昊
 Date: 2018-03-22
 
 """
